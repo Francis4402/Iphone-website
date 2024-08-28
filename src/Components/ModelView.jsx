@@ -1,4 +1,4 @@
-import { Html, OrbitControls, PerspectiveCamera, View } from "@react-three/drei"
+import { OrbitControls, PerspectiveCamera, View } from "@react-three/drei"
 import PropTypes from 'prop-types';
 import Lights from "./Lights";
 import { Suspense } from "react";
@@ -7,8 +7,9 @@ import * as THREE from 'three';
 import Loader from "./Loader";
 
 const ModelView = ({index, groupRef, gsapType, controlRef, setRotationState, size, item}) => {
+  
   return (
-    <View index={index} id={gsapType} className={`border-2 border-red-500 w-full h-full ${index === 2} ? 'right-[-100%] : ''`}>
+    <View index={index} id={gsapType} className={`w-full h-full absolute ${index === 2 ? 'right-[-100%]' : ''}`}>
       <ambientLight intensity={0.3} />
 
       <PerspectiveCamera makeDefault position={[0, 0, 4]} />
@@ -32,7 +33,7 @@ ModelView.propTypes = {
   groupRef: PropTypes.any,
   gsapType: PropTypes.any,
   controlRef: PropTypes.any,
-  setRotationSize: PropTypes.any,
+  setRotationState: PropTypes.any,
   size: PropTypes.any,
   item: PropTypes.any
 }
