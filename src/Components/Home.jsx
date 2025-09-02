@@ -1,3 +1,4 @@
+import GsapScrollTrigger from "../Gsap/ScrollTrigger"
 import Features from "./Features"
 import Footer from "./Footer"
 import Hero from "./Hero"
